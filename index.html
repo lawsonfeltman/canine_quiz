@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canine Quiz</title>
+	<link rel="stylesheet" href="main.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<header>
+			<div id="header-wrap"></div>
+		</header>
+		<div id="column1">
+			<button type="submit" id="start">Start Quiz</button>
+			<div id="quiz_div">
+				<form id="answers" action="">
+					<input type="radio" name="x" value="y">y<br>
+					<input type="radio" name="x" value="y">y<br>
+					<input type="radio" name="x" value="y">y<br>
+					<input type="radio" name="x" value="y">y<br>
+				</form>
+				<button type="submit" id="submit" form="answers" value="Submit Answer">Submit Answer</button>
+			</div> 
+		</div>
+		<div id="column2">
+			<div id="question_pic_wrap">
+				<img id="question_pic" src="img/breeds.jpg"/>
+			</div>
+			<div id="question_text_wrap">
+				<div id="question_text">Press the Start Quiz button to begin a fascinating quiz about your favorite 4-legged creature!</div>
+			</div>
+		</div>
+		<div id="column3">
+			<div id="question_count_wrap">
+				<div id="question_count">
+					This is question <span id="question_num">0</span> out of 5
+				</div>
+			</div>
+			<div id="num_correct_wrap">
+				<div id="num_correct_count">
+					You have answered <span id="num_correct">0</span> out of 5
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
