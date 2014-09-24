@@ -25,7 +25,7 @@ $(document).ready(function(){
 		choices: ["Gundog Group", "Hound Group", "Terrier Group", "Working Group"],
 		question_number: 4,
 		correct: 1,
-		response: "The Blue Tick Coonhound originates in the southern United States"
+		response: "The Blue Tick Coonhound hails from the southern United States"
 	},
 	{
 		question: "What's the best kind of dog?",
@@ -81,9 +81,15 @@ $(document).ready(function(){
 			numberCorrect++;
 			$("#num_correct").html(numberCorrect);
 		};
-		currentQuestion++;
-		$("#question_num").html(currentQuestion+1);
-		nextQuestion();
+		$("#question_text").html("");
+		$("#question_text").html('<div id="response_wrap">'+canineQuiz[currentQuestion].response+'</div>');
+		setTimeout(function() { 
+			$("#response_wrap").fadeOut();
+			currentQuestion++;
+			$("#question_num").html(currentQuestion+1);
+			nextQuestion();
+		}, 4000);
+		
 	});
 	
 	var nextQuestion = function() {
