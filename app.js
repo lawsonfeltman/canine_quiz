@@ -53,6 +53,9 @@ $(document).ready(function(){
 	imgArray[4] = new Image();
 	imgArray[4].src = 'img/naptime.jpg';
 
+	imgArray[5] = new Image();
+	imgArray[5].src = 'img/end.jpg';
+
 	$("#start").on("click", function(event) {
 		currentQuestion = 0;
 		numberCorrect = 0;
@@ -103,6 +106,8 @@ $(document).ready(function(){
 			$("#quiz_div").prepend(newChoices);
 		}
 		else {
+			$("#question_pic_wrap").html("");
+			$("#question_pic_wrap").html(imgArray[5]);
 			$("#question_text").html("Thank you for playing the Canine Quiz!")
 			$(".choice_area").remove();
 			$("#question_count").html("");
