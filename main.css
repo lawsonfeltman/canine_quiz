@@ -123,14 +123,7 @@ BEGIN LAWSON CSS
 	width: 22%;
 	float: right;
 }
-#question_count_wrap {
-	position: relative;
-	display: inline-block;
-	height: 400px;
-	width: 100%;
-	text-align: center;
-}
-#end {
+#question_count_wrap, #end {
 	position: relative;
 	display: inline-block;
 	height: 400px;
@@ -157,4 +150,7 @@ BEGIN LAWSON CSS
 	font-size: 1.3em;
 	font-weight: bold;
 	display: none;
+}
+#question_pic_wrap {
+	text-align: center;
 }
