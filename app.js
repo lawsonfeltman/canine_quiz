@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var canineQuiz = [{
-		question: "From which wild species of animal are dogs derived?",
+		question: "From which species of wild animal are dogs derived?",
 		choices: ["Boars", "Bears", "Wolves", "Aliens"],
 		question_number: 1,
 		correct: 2,
@@ -34,21 +34,73 @@ $(document).ready(function(){
 		correct: 3,
 		response: "Definitely all of the above!  Have you said hi to your doggy today?  Thanks for playing the canine quiz!"
 	}]
+	
 	var numberCorrect = 0;
 	var currentQuestion = 0;
+	var imgArray = new Array();
+	imgArray[0] = new Image();
+	imgArray[0].src = 'img/history.jpg';
 
-	$("#start").on("click", function() {
+	imgArray[1] = new Image();
+	imgArray[1].src = 'img/jackrussell.jpg';
+
+	imgArray[2] = new Image();
+	imgArray[2].src = 'img/lab.jpg';
+
+	imgArray[3] = new Image();
+	imgArray[3].src = 'img/bluetick.jpg';
+
+	imgArray[4] = new Image();
+	imgArray[4].src = 'img/naptime.jpg';
+
+	$("#start").on("click", function(event) {
+		currentQuestion = 0;
+		numberCorrect = 0;
+		$("#question_count").html('This is question <span id="question_num">1</span> out of 5');
+		$("#num_correct").html("0");
+		event.preventDefault();
+		// Show quiz panels
 		$("#quiz_div").css("display", "inline-block");
 		$("#num_correct_count").css("display", "inline-block");
 		$("#question_count").css("display", "inline-block");
-		for (i = 0; i <= canineQuiz.length; i++) {
-			$("#question_text").html(canineQuiz[i].question);
-			$("#choice1").htmlString.replace('y', canineQuiz[i].choices[0])
-			// $("#choice1").html(canineQuiz[i].choices[0]);
-			// $("#choice2").html(canineQuiz[i].choices[1]);
-			// $("#choice3").html(canineQuiz[i].choices[2]);
-			// $("#choice4").html(canineQuiz[i].choices[3]);
-			
-		};
+		var newChoices = '<div class="choice_area"><input type="radio" name="choice1" class="choice" value="0">'+canineQuiz[currentQuestion].choices[0]+'</br>'+'<input type="radio" name="choice2" class="choice" value="0">'+canineQuiz[currentQuestion].choices[1]+'</br>'+'<input type="radio" name="choice3" class="choice" value="2">'+canineQuiz[currentQuestion].choices[2]+'</br>'+'<input type="radio" name="choice4" class="choice" value="3">'+canineQuiz[currentQuestion].choices[3]+'</br></div>';
+		var newPic = imgArray[currentQuestion];
+		$("#question_pic_wrap").html("");
+		$("#question_pic_wrap").html(newPic);
+		$(".choice_area").remove();
+		$("#quiz_div").prepend(newChoices);
+		$("#question_text").html(canineQuiz[currentQuestion].question);
 	});
+		
+
+
+	$("#submit").on("click", function(event){
+		event.preventDefault();
+		var prevAnswer = $('input:checked').val();
+		if (prevAnswer == canineQuiz[currentQuestion].correct) {
+			numberCorrect++;
+			$("#num_correct").html(numberCorrect);
+		};
+		currentQuestion++;
+		$("#question_num").html(currentQuestion+1);
+		nextQuestion();
+	});
+	
+	var nextQuestion = function() {
+		if (currentQuestion < 5) {
+			$("#question_text").html(canineQuiz[currentQuestion].question);
+			var newChoices = '<div class="choice_area"><input type="radio" name="choice1" class="choice" value="0">'+canineQuiz[currentQuestion].choices[0]+'</br>'+'<input type="radio" name="choice2" class="choice" value="1">'+canineQuiz[currentQuestion].choices[1]+'</br>'+'<input type="radio" name="choice3" class="choice" value="2">'+canineQuiz[currentQuestion].choices[2]+'</br>'+'<input type="radio" name="choice4" class="choice" value="3">'+canineQuiz[currentQuestion].choices[3]+'</br></div>';
+			var newPic = imgArray[currentQuestion];
+			$("#question_pic_wrap").html("");
+			$("#question_pic_wrap").html(newPic);
+			$(".choice_area").remove();
+			$("#quiz_div").prepend(newChoices);
+		}
+		else {
+			$("#question_text").html("Thank you for playing the Canine Quiz!")
+			$(".choice_area").remove();
+			$("#question_count").html("");
+			$("#question_count").html('<div id="end">You have reached the end of the quiz</div>');
+		};
+	}
 });

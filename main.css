@@ -130,6 +130,13 @@ BEGIN LAWSON CSS
 	width: 100%;
 	text-align: center;
 }
+#end {
+	position: relative;
+	display: inline-block;
+	height: 400px;
+	width: 100%;
+	text-align: center;
+}
 #num_correct_wrap {
 	position: relative;
 	display: inline-block;
