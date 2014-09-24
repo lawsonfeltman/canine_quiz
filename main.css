@@ -49,6 +49,9 @@ table {
 /*
 BEGIN LAWSON CSS
 */
+button {
+    outline: none;
+}
 #wrap {
 	position: relative;
 	height: 100%;

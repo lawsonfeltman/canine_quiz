@@ -63,6 +63,7 @@ $(document).ready(function(){
 		$("#num_correct").html("0");
 		event.preventDefault();
 		// Show quiz panels
+		$("#quiz_div").show();
 		$("#quiz_div").css("display", "inline-block");
 		$("#num_correct_count").css("display", "inline-block");
 		$("#question_count").css("display", "inline-block");
@@ -110,6 +111,7 @@ $(document).ready(function(){
 			$("#question_pic_wrap").html(imgArray[5]);
 			$("#question_text").html("Thank you for playing the Canine Quiz!")
 			$(".choice_area").remove();
+			$("#quiz_div").hide();
 			$("#question_count").html("");
 			$("#question_count").html('<div id="end">You have reached the end of the quiz</div>');
 		};
