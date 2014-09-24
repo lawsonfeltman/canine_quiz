@@ -11,7 +11,7 @@ $(document).ready(function(){
 		choices: ["Gundog Group", "Hound Group", "Terrier Group", "Working Group"],
 		question_number: 2,
 		correct: 2,
-		response: "The Jack Russel is a member of the Terrier Group"
+		response: "The Jack Russell is a member of the Terrier Group"
 	},
 	{
 		question: "Which family of dogs do I belong to?",
