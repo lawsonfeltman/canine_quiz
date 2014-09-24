@@ -32,7 +32,7 @@ $(document).ready(function(){
 		choices: ["A well-behaved one", "A well-loved one", "A tired one", "All of the above"],
 		question_number: 5,
 		correct: 3,
-		response: "Definitely all of the above!  Have you said hi to your doggy today?  Thanks for playing the canine quiz!"
+		response: "Definitely all of the above!"
 	}]
 	
 	var numberCorrect = 0;
