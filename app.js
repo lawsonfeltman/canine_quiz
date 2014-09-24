@@ -63,7 +63,7 @@ $(document).ready(function(){
 		$("#quiz_div").css("display", "inline-block");
 		$("#num_correct_count").css("display", "inline-block");
 		$("#question_count").css("display", "inline-block");
-		var newChoices = '<div class="choice_area"><input type="radio" name="choice1" class="choice" value="0">'+canineQuiz[currentQuestion].choices[0]+'</br>'+'<input type="radio" name="choice2" class="choice" value="0">'+canineQuiz[currentQuestion].choices[1]+'</br>'+'<input type="radio" name="choice3" class="choice" value="2">'+canineQuiz[currentQuestion].choices[2]+'</br>'+'<input type="radio" name="choice4" class="choice" value="3">'+canineQuiz[currentQuestion].choices[3]+'</br></div>';
+		var newChoices = '<div class="choice_area"><input type="radio" name="choice" class="choice" value="0">'+canineQuiz[currentQuestion].choices[0]+'</br>'+'<input type="radio" name="choice" class="choice" value="0">'+canineQuiz[currentQuestion].choices[1]+'</br>'+'<input type="radio" name="choice" class="choice" value="2">'+canineQuiz[currentQuestion].choices[2]+'</br>'+'<input type="radio" name="choice" class="choice" value="3">'+canineQuiz[currentQuestion].choices[3]+'</br></div>';
 		var newPic = imgArray[currentQuestion];
 		$("#question_pic_wrap").html("");
 		$("#question_pic_wrap").html(newPic);
@@ -89,7 +89,7 @@ $(document).ready(function(){
 	var nextQuestion = function() {
 		if (currentQuestion < 5) {
 			$("#question_text").html(canineQuiz[currentQuestion].question);
-			var newChoices = '<div class="choice_area"><input type="radio" name="choice1" class="choice" value="0">'+canineQuiz[currentQuestion].choices[0]+'</br>'+'<input type="radio" name="choice2" class="choice" value="1">'+canineQuiz[currentQuestion].choices[1]+'</br>'+'<input type="radio" name="choice3" class="choice" value="2">'+canineQuiz[currentQuestion].choices[2]+'</br>'+'<input type="radio" name="choice4" class="choice" value="3">'+canineQuiz[currentQuestion].choices[3]+'</br></div>';
+			var newChoices = '<div class="choice_area"><input type="radio" name="choice" class="choice" value="0">'+canineQuiz[currentQuestion].choices[0]+'</br>'+'<input type="radio" name="choice" class="choice" value="1">'+canineQuiz[currentQuestion].choices[1]+'</br>'+'<input type="radio" name="choice" class="choice" value="2">'+canineQuiz[currentQuestion].choices[2]+'</br>'+'<input type="radio" name="choice" class="choice" value="3">'+canineQuiz[currentQuestion].choices[3]+'</br></div>';
 			var newPic = imgArray[currentQuestion];
 			$("#question_pic_wrap").html("");
 			$("#question_pic_wrap").html(newPic);
