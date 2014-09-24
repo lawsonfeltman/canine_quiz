@@ -37,7 +37,9 @@ $(document).ready(function(){
 	
 	var numberCorrect = 0;
 	var currentQuestion = 0;
+	
 	var imgArray = new Array();
+
 	imgArray[0] = new Image();
 	imgArray[0].src = 'img/history.jpg';
 
@@ -63,10 +65,10 @@ $(document).ready(function(){
 		$("#num_correct").html("0");
 		event.preventDefault();
 		// Show quiz panels
-		$("#quiz_div").show();
 		$("#quiz_div").css("display", "inline-block");
 		$("#num_correct_count").css("display", "inline-block");
 		$("#question_count").css("display", "inline-block");
+		$("#submit_wrap").show();
 		var newChoices = '<div class="choice_area"><input type="radio" name="choice" class="choice" value="0">'+canineQuiz[currentQuestion].choices[0]+'</br>'+'<input type="radio" name="choice" class="choice" value="0">'+canineQuiz[currentQuestion].choices[1]+'</br>'+'<input type="radio" name="choice" class="choice" value="2">'+canineQuiz[currentQuestion].choices[2]+'</br>'+'<input type="radio" name="choice" class="choice" value="3">'+canineQuiz[currentQuestion].choices[3]+'</br></div>';
 		var newPic = imgArray[currentQuestion];
 		$("#question_pic_wrap").html("");
@@ -111,7 +113,7 @@ $(document).ready(function(){
 			$("#question_pic_wrap").html(imgArray[5]);
 			$("#question_text").html("Thank you for playing the Canine Quiz!")
 			$(".choice_area").remove();
-			$("#quiz_div").hide();
+			$("#submit_wrap").hide();
 			$("#question_count").html("");
 			$("#question_count").html('<div id="end">You have reached the end of the quiz</div>');
 		};
